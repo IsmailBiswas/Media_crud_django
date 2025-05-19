@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %} {{ form.as_p }}
+  <span> Are you sure you want to delete? </span>  <h2>{{ image.title }}</h2>
+    <img height="50px" src="{{ image.image.url }}" alt="Description" />
+    <div>
+        <input type="submit" value="Delete" />
+    </div>
+</form>
+{% endblock %}

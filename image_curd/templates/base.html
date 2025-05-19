@@ -1,0 +1,29 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Media CRUD{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+  </head>
+  <body>
+    <header>
+      <h1>
+
+      <a href="{% url 'image-view' %}">{% block header %}Media CRUD{% endblock %}</a>
+      </h1>
+      <nav>
+        <ul>
+          <li><a href="{% url 'image-add' %}"  >Upload New</a></li>
+          <li><a href="{% url 'image-view' %}"  >View All</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      {% block content %} {# This is where the main content of the page will go.
+      #} {% endblock %}
+    </main>
+  </body>
+</html>

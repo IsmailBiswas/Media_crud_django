@@ -1,0 +1,24 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+    {% if image %} 
+        {% for item in image %}
+            <div class="image-card" style="border: 1px solid black; margin: 8px; padding:8px">
+                <p>
+                    <p>{{ item.title }}</p>
+                </p>
+                <img height="300px" src="{{ item.image.url }}" alt="Description" />
+                <div>
+                    <button>
+                        <a href="/image/{{item.id}}/delete">Delete</a>
+                    </button>
+                    <button>
+                        <a href="/image/{{item.id}}">update</a>
+                    </button>
+                </div>
+            </div>
+        {% endfor %} 
+    {% else %}
+        <p>No images are available.</p>
+    {% endif %}
+{% endblock %}
